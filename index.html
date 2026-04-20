@@ -3,40 +3,76 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Aniket Verma | Portfolio</title>
+<title>Aniket Verma | Premium Portfolio</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
-body{background:#0f172a;color:white;scroll-behavior:smooth}
-header{text-align:center;padding:60px 20px;background:linear-gradient(135deg,#1e293b,#020617)}
-header h1{font-size:42px}
-header p{opacity:.7}
-nav{display:flex;justify-content:center;gap:25px;background:#020617;padding:15px;position:sticky;top:0}
-nav a{color:#38bdf8;text-decoration:none;font-weight:600}
+body{background:#020617;color:white;overflow-x:hidden}
+
+/* Animated background */
+body::before{
+content:"";
+position:fixed;
+width:200%;height:200%;
+background:radial-gradient(circle,#38bdf822 1px,transparent 1px);
+background-size:40px 40px;
+animation:moveBg 20s linear infinite;
+z-index:-1;
+}
+@keyframes moveBg{0%{transform:translate(0,0)}100%{transform:translate(-200px,-200px)}}
+
+header{text-align:center;padding:60px 20px}
+header h1{font-size:45px}
+#typing{color:#38bdf8;margin-top:10px}
+
+nav{display:flex;justify-content:center;gap:20px;padding:15px;background:#020617;position:sticky;top:0}
+nav a{color:#38bdf8;text-decoration:none}
+
 section{max-width:1000px;margin:auto;padding:50px 20px}
-.card{background:rgba(30,41,59,.6);backdrop-filter:blur(10px);padding:25px;border-radius:15px;margin-bottom:25px;box-shadow:0 8px 25px rgba(0,0,0,.4);transition:.3s;opacity:0;transform:translateY(30px)}
-.card:hover{transform:translateY(-5px)}
-h2{color:#38bdf8;margin-bottom:10px}
-button{padding:10px 15px;border:none;border-radius:8px;background:#38bdf8;color:black;cursor:pointer;margin:8px}
-.profile-img{width:120px;height:120px;border-radius:50%;object-fit:cover;margin:20px auto;display:block;border:3px solid #38bdf8}
-.links a{display:inline-block;margin:10px;color:#38bdf8}
+.card{
+background:rgba(30,41,59,.5);
+backdrop-filter:blur(15px);
+padding:25px;border-radius:15px;margin-bottom:25px;
+box-shadow:0 8px 30px rgba(0,0,0,.5);
+opacity:0;transform:translateY(40px);
+transition:.5s;
+}
+.card:hover{transform:scale(1.02)}
+
+h2{color:#38bdf8;margin-bottom:15px}
+
+button{
+padding:10px 18px;border:none;border-radius:25px;
+background:#38bdf8;color:black;cursor:pointer;
+transition:.3s;
+}
+button:hover{background:white}
+
+.profile-img{
+width:130px;height:130px;border-radius:50%;border:3px solid #38bdf8;
+display:block;margin:auto
+}
+
 .resume-actions{display:flex;justify-content:center;gap:15px;margin-top:15px}
-iframe{width:100%;height:500px;border:none;border-radius:10px;margin-top:15px}
+iframe{width:100%;height:450px;border:none;border-radius:10px}
+
+/* timeline */
+.timeline{border-left:2px solid #38bdf8;padding-left:20px}
+.timeline div{margin-bottom:15px}
+
 footer{text-align:center;padding:20px;background:#020617}
-@media(max-width:600px){header h1{font-size:30px}}
 </style>
 </head>
 <body>
+
 <header>
 <img src="https://via.placeholder.com/150" class="profile-img">
 <h1>Aniket Verma</h1>
 <p id="typing"></p>
-
 <div class="resume-actions">
 <a href="resume.pdf" target="_blank"><button>View Resume</button></a>
 <a href="resume.pdf" download><button>Download Resume</button></a>
 </div>
-
 </header>
 
 <nav>
@@ -50,7 +86,7 @@ footer{text-align:center;padding:20px;background:#020617}
 <section id="about">
 <div class="card">
 <h2>About Me</h2>
-<p>I am a Computer Science and IT student passionate about development and problem solving. I aim to build impactful real-world applications.</p>
+<p>CSIT student passionate about development, problem solving and building impactful applications.</p>
 </div>
 </section>
 
@@ -58,33 +94,35 @@ footer{text-align:center;padding:20px;background:#020617}
 <div class="card">
 <h2>Skills</h2>
 <p>Python</p>
-<div style="background:#1e293b;border-radius:10px;"><div style="width:80%;background:#38bdf8;padding:5px;border-radius:10px;"></div></div>
+<div style="background:#1e293b;border-radius:10px"><div style="width:85%;background:#38bdf8;height:8px;border-radius:10px"></div></div>
 <p>DSA</p>
-<div style="background:#1e293b;border-radius:10px;"><div style="width:70%;background:#38bdf8;padding:5px;border-radius:10px;"></div></div>
+<div style="background:#1e293b;border-radius:10px"><div style="width:75%;background:#38bdf8;height:8px;border-radius:10px"></div></div>
 </div>
 </section>
 
 <section id="projects">
 <div class="card">
 <h2>Projects</h2>
-<p><b>Student Management System</b><br>Flask + SQL based system.</p>
-<p><b>Portfolio Website</b><br>Responsive portfolio with animations.</p>
-<p><b>API Integration</b><br>External API integration.</p>
+<p><b>Student Management System</b> - Flask + SQL based system</p>
+<p><b>Portfolio Website</b> - Responsive animated portfolio</p>
+<p><b>API Integration</b> - External API integration</p>
 </div>
 </section>
 
 <section id="resume">
 <div class="card">
-<h2>My Resume</h2>
-<p>You can view or download my resume below.</p>
+<h2>Resume</h2>
 <div class="resume-actions">
 <a href="resume.pdf" target="_blank"><button>View Resume</button></a>
 <a href="resume.pdf" download><button>Download Resume</button></a>
 </div>
-
-<!-- Embedded Resume Viewer -->
 <iframe src="resume.pdf"></iframe>
 
+<h3 style="margin-top:20px;color:#38bdf8">Education Timeline</h3>
+<div class="timeline">
+<div><b>B.Tech CSIT</b> - Currently pursuing</div>
+<div><b>Focus:</b> DSA, Web Development</div>
+</div>
 </div>
 </section>
 
@@ -92,10 +130,10 @@ footer{text-align:center;padding:20px;background:#020617}
 <div class="card">
 <h2>Contact</h2>
 <p>Email: aniketverma7477@gmail.com</p>
-<div class="links">
-<a href="https://github.com/bunny7477" target="_blank">GitHub</a>
+<p>
+<a href="https://github.com/bunny7477" target="_blank">GitHub</a> |
 <a href="https://www.linkedin.com/in/aniketverma6295" target="_blank">LinkedIn</a>
-</div>
+</p>
 </div>
 </section>
 
@@ -104,12 +142,22 @@ footer{text-align:center;padding:20px;background:#020617}
 </footer>
 
 <script>
-const text="CSIT Student | Aspiring Software Developer";
+// typing
+const text="Aspiring Software Developer | Problem Solver";
 let i=0;
-function typing(){if(i<text.length){document.getElementById('typing').innerHTML+=text.charAt(i);i++;setTimeout(typing,50);}}
+function typing(){if(i<text.length){document.getElementById('typing').innerHTML+=text.charAt(i);i++;setTimeout(typing,40)}}
 typing();
+
+// scroll animation
 const cards=document.querySelectorAll('.card');
-window.addEventListener('scroll',()=>{cards.forEach(card=>{const top=card.getBoundingClientRect().top;if(top<window.innerHeight-50){card.style.opacity=1;card.style.transform='translateY(0)';}});});
+window.addEventListener('scroll',()=>{
+cards.forEach(c=>{
+if(c.getBoundingClientRect().top<window.innerHeight-50){
+c.style.opacity=1;c.style.transform='translateY(0)'
+}
+})
+})
 </script>
+
 </body>
 </html>
